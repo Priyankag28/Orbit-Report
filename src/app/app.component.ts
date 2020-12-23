@@ -22,6 +22,8 @@ export class AppComponent {
             for( let i=0; i< fetchedSatellites.length; i++){
             //console.log(fetchedSatellites);
                let satellite = new Satellite(fetchedSatellites[i].name, fetchedSatellites[i].type, fetchedSatellites[i].launchDate, fetchedSatellites[i].orbitType, fetchedSatellites[i].operational);
+               let checkSpaceDebris = satellite.shouldShowWarning()
+               console.log("checkSpaceDebris :- " + satellite.name + " Name :- " + checkSpaceDebris)
                this.sourceList.push(satellite);
  
             }
