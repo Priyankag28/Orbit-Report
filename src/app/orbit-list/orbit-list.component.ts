@@ -16,5 +16,19 @@ export class OrbitListComponent implements OnInit {
   ngOnInit() {
     //console.log(JSON.stringify(this.satellites))
   }
+  sort(column: string): void {
+      console.log("TESTING")
+    // array.sort modifies the array, sorting the items based on the given compare function
+    this.satellites.sort(function(a: Satellite, b: Satellite): number {
+      //console.log(JSON.stringify(a))
+      //console.log(JSON.stringify(b))
+       if(a[column] < b[column]) {
+          return -1;
+       } else if (a [column] > b[column]) {
+          return 1;
+       }
+       return 0;
+    });
+ }
 
 }
